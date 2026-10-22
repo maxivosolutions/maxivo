@@ -1,4 +1,61 @@
-/* Decathlon Authorised Dealer - shared styles for index.html and decathlon.html */
+/* Homepage additions: business areas, Decathlon section, enquiry routes */
+
+/* Intro */
+
+	.intro-eyebrow {
+		font-size: 0.7em;
+		font-weight: bold;
+		letter-spacing: 0.35em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 1em;
+	}
+
+	.business-areas {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5em;
+		margin: 0 0 2em 0;
+	}
+
+		.business-area {
+			display: block;
+			padding: 1.5em 1.75em 0.5em 1.75em;
+			border: solid 1px rgba(255, 255, 255, 0.15);
+			border-radius: 0.25em;
+			background: rgba(255, 255, 255, 0.05);
+			color: inherit;
+			border-bottom: solid 1px rgba(255, 255, 255, 0.15);
+			transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+		}
+
+			.business-area:hover {
+				background: rgba(255, 255, 255, 0.1);
+				border-color: rgba(255, 255, 255, 0.35);
+				color: inherit;
+			}
+
+			.business-area h3 {
+				font-size: 1em;
+				margin-bottom: 0.75em;
+			}
+
+				.business-area h3 .icon {
+					margin-right: 0.5em;
+				}
+
+			.business-area ul {
+				font-size: 0.85em;
+				margin-bottom: 1em;
+			}
+
+		@media screen and (max-width: 736px) {
+			.business-areas {
+				grid-template-columns: 1fr;
+			}
+		}
+
+/* Decathlon section */
 
 	.wrapper.style-decathlon {
 		background: radial-gradient(ellipse at 70% 30%, #3a46c4 0%, #2a2f9a 45%, #171a5e 100%);
@@ -8,12 +65,9 @@
 			color: #3643ba;
 		}
 
-/* Badge: Decathlon logo + "Authorised Dealer" */
-
 	.decathlon-badge {
 		display: inline-block;
 		margin: 0 0 2em 0;
-		border-bottom: 0;
 	}
 
 		.decathlon-badge img {
@@ -33,18 +87,9 @@
 			color: rgba(255, 255, 255, 0.85);
 		}
 
-	.decathlon-badge.small img {
-		height: 1.6em;
-	}
-
-	.decathlon-badge.small span {
-		font-size: 0.55em;
-		margin-top: 0.45em;
-	}
-
-	.decathlon-tagline {
-		font-style: italic;
-		color: rgba(255, 255, 255, 0.75);
+	.fine-print {
+		font-size: 0.75em;
+		color: rgba(255, 255, 255, 0.55);
 	}
 
 /* Button with Decathlon logo */
@@ -67,202 +112,51 @@
 			display: block;
 		}
 
-/* Bike strip on the homepage */
+		@media screen and (max-width: 736px) {
+			.button.decathlon-button {
+				justify-content: center;
+				white-space: normal;
+				height: auto;
+				line-height: 1.4;
+				padding: 1em 1.75em;
+			}
+		}
 
-	.bike-strip {
+/* Contact: enquiry routes */
+
+	.enquiry-routes {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 1em;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5em;
 		margin: 0 0 2.5em 0;
 	}
 
-		.bike-strip img {
-			width: 100%;
-			height: auto;
-			display: block;
-			border-radius: 6px;
-			background: #fff;
+		.enquiry-routes section {
+			padding: 1.75em 1.75em 0.25em 1.75em;
+			border: solid 1px rgba(255, 255, 255, 0.15);
+			border-radius: 0.25em;
+			background: rgba(255, 255, 255, 0.05);
 		}
+
+			.enquiry-routes ul:not(.actions) {
+				font-size: 0.9em;
+			}
 
 		@media screen and (max-width: 736px) {
-			.bike-strip {
-				grid-template-columns: repeat(2, 1fr);
-			}
-		}
-
-/* Header logo on catalogue page */
-
-	#header > .title img {
-		display: block;
-		height: 2em;
-		width: auto;
-	}
-
-	#header > .title {
-		display: flex;
-		align-items: center;
-		gap: 1.25em;
-	}
-
-		#header > .title .divider {
-			width: 1px;
-			height: 2em;
-			background: rgba(255, 255, 255, 0.25);
-		}
-
-		@media screen and (max-width: 736px) {
-			#header > .title .divider,
-			#header > .title img + .divider + img {
-				display: none;
-			}
-		}
-
-		@media screen and (max-width: 480px) {
-			#header > .title img {
-				height: 1.6em;
-			}
-		}
-
-/* Savings breakdown */
-
-	.savings-compare {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 2em;
-		margin-bottom: 1.5em;
-	}
-
-		.savings-compare h4 {
-			margin-bottom: 0.75em;
-		}
-
-		.savings-compare table {
-			margin-bottom: 0;
-		}
-
-		.savings-compare td:last-child,
-		.savings-compare th:last-child {
-			text-align: right;
-			white-space: nowrap;
-		}
-
-		@media screen and (max-width: 736px) {
-			.savings-compare {
+			.enquiry-routes {
 				grid-template-columns: 1fr;
 			}
 		}
 
-/* Catalogue filter */
+/* Long button labels in the new sections wrap on small screens */
 
-	.catalogue-filter {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75em;
-		margin: 0 0 2em 0;
-		padding: 0;
-		list-style: none;
-	}
-
-		.catalogue-filter li {
-			padding: 0;
-		}
-
-		.catalogue-filter .button.small.active {
-			background-color: rgba(255, 255, 255, 0.15);
-			box-shadow: inset 0 0 0 1px #ffffff;
-		}
-
-/* Catalogue grid */
-
-	.bike-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
-		gap: 1.5em;
-		margin-bottom: 2em;
-	}
-
-	.bike-card {
-		background: rgba(255, 255, 255, 0.06);
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		border-radius: 8px;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-	}
-
-		.bike-card .photo {
-			background: #ffffff;
-			aspect-ratio: 1 / 1;
-		}
-
-			.bike-card .photo img {
-				width: 100%;
-				height: 100%;
-				object-fit: contain;
-				display: block;
-			}
-
-		.bike-card .body {
-			padding: 1.25em 1.25em 1.5em 1.25em;
-			display: flex;
-			flex-direction: column;
-			flex: 1;
-		}
-
-		.bike-card .brand {
-			font-size: 0.6em;
-			font-weight: bold;
-			letter-spacing: 0.25em;
-			text-transform: uppercase;
-			color: rgba(255, 255, 255, 0.55);
-			margin: 0 0 0.35em 0;
-		}
-
-		.bike-card h3 {
-			font-size: 1em;
-			margin: 0 0 0.75em 0;
-			line-height: 1.4;
-		}
-
-		.bike-card .specs {
-			font-size: 0.75em;
-			color: rgba(255, 255, 255, 0.7);
-			margin: 0 0 1em 0;
+	@media screen and (max-width: 736px) {
+		#b2b .actions .button,
+		#decathlon .actions .button,
+		.enquiry-routes .actions .button {
+			white-space: normal;
+			height: auto;
 			line-height: 1.6;
+			padding: 1.1em 2em;
 		}
-
-		.bike-card .prices {
-			margin-top: auto;
-			font-size: 0.8em;
-			line-height: 1.7;
-		}
-
-			.bike-card .prices div {
-				display: flex;
-				justify-content: space-between;
-				gap: 1em;
-			}
-
-			.bike-card .prices .mrp span:last-child {
-				text-decoration: line-through;
-				color: rgba(255, 255, 255, 0.5);
-			}
-
-			.bike-card .prices .bulk {
-				font-size: 1.15em;
-				font-weight: bold;
-				color: #ffd27a;
-			}
-
-			.bike-card .prices .saving {
-				margin-top: 0.5em;
-				padding-top: 0.5em;
-				border-top: 1px dashed rgba(255, 255, 255, 0.2);
-				color: #9ff0c0;
-				font-weight: bold;
-			}
-
-	.fine-print {
-		font-size: 0.75em;
-		color: rgba(255, 255, 255, 0.55);
 	}
