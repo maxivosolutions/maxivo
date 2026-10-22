@@ -66,6 +66,18 @@
 				}
 			}
 
+			@media screen and (max-width: 840px) {
+				/* Narrow tablets - tighten header so all nav items fit */
+				#sidebar > .inner::before {
+					width: 100px;
+					margin-right: 1em;
+				}
+
+				#sidebar nav ul li {
+					margin: 0 0 0 0.8em !important;
+				}
+			}
+
 			@media screen and (max-width: 736px) {
 				/* Mobile - sidebar is hidden, add fixed header with logo */
 				body::before {

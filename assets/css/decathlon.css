@@ -117,8 +117,9 @@
 				justify-content: center;
 				white-space: normal;
 				height: auto;
+				min-height: calc(4.75em + 2px);
 				line-height: 1.4;
-				padding: 1em 1.75em;
+				padding: 0.75em 1.75em;
 			}
 		}
 
@@ -142,7 +143,7 @@
 				font-size: 0.9em;
 			}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 980px) {
 			.enquiry-routes {
 				grid-template-columns: 1fr;
 			}
@@ -154,9 +155,14 @@
 		#b2b .actions .button,
 		#decathlon .actions .button,
 		.enquiry-routes .actions .button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
 			white-space: normal;
 			height: auto;
+			min-height: calc(4.75em + 2px);
 			line-height: 1.6;
-			padding: 1.1em 2em;
+			padding: 0.75em 2em;
 		}
 	}
